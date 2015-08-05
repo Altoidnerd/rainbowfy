@@ -20,12 +20,11 @@ def colorizeStr(factor,string):
         printColor(indexes[r],indexes[g],indexes[b],c)
         r = (r+factor) % len(indexes)
 
-if len(sys.argv) == 1:
-    target = sys.stdin.read()
-else:
-    target = ' '.join(sys.argv[1:])
-
 def main():
+    if len(sys.argv) == 1:
+        target = sys.stdin.read()
+    else:
+        target = ' '.join(sys.argv[1:])
     colorizeStr(2, target)
 
 if __name__ == '__main__':
